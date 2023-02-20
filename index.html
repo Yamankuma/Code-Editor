@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<pre class="header">                                                                        Code Editor                             </pre>
+<pre> HTML                                                 CSS                                                Java Script
+</pre>
+<div class="main">
+    
+<textarea  id="htmlcode" ></textarea>
+
+<textarea id="csscode" ></textarea>
+
+<textarea  id="jscode" ></textarea>
+<iframe id="output"></iframe>
+<script>
+    function run(){
+    let htmlcode = document.querySelector("#htmlcode").value;
+    let csscode ="<style>" +document.querySelector("#csscode").value+
+        "</style>";
+    let jscode = document.querySelector("#jscode").value
+
+    output.contentDocument.body.innerHTML = htmlcode+csscode;
+    output.contentWindow.eval(jscode);
+    }
+   document.querySelector("#htmlcode").addEventListener("keyup",run);
+   document.querySelector("#csscode").addEventListener("keyup",run);
+   document.querySelector("#jscode").addEventListener("keyup",run);
+
+</script>
+</div>
+
+<style>
+    #htmlcode{
+        height: 200px;
+        width: 32%;
+        background-color: red;
+    }
+    #csscode{
+        height: 200px;
+        width: 32%;
+        background-color: rgba(0, 255, 200, 0.637);
+    }
+    #jscode{
+        height: 200px;
+        width: 32%;
+        background-color: yellow;
+    }
+    #output{
+        width: 98%;
+        height: 300px;
+    }
+    pre{
+        font-size:larger;
+    }
+    .header{
+        color: red;
+    }
+    body{
+        background-color: rgba(181, 245, 179, 0.808);
+    }
+   
+</style>
+</body>
+</html>
